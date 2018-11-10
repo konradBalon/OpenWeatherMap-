@@ -8,17 +8,17 @@ import org.openweathermap.api.query.*;
 import org.openweathermap.api.query.currentweather.CurrentWeatherOneLocationQuery;
 
 public class CurrentWeatherOneLocationExample {
-    private static final String API_KEY = "API_KEY_VALUE";
+    private static final String API_KEY = "590661e9a75d81f118714bd102422eae";
 
     public static void main(String[] args) {
         DataWeatherClient client = new UrlConnectionDataWeatherClient(API_KEY);
         CurrentWeatherOneLocationQuery currentWeatherOneLocationQuery = QueryBuilderPicker.pick()
                 .currentWeather()                   // get current weather
                 .oneLocation()                      // for one location
-                .byCityName("Kharkiv")              // for Kharkiv city
-                .countryCode("UA")                  // in Ukraine
+                .byCityName("Frydrychowice")              // for Frydrychowice city
+                .countryCode("PL")                  // in Poland
                 .type(Type.ACCURATE)                // with Accurate search
-                .language(Language.ENGLISH)         // in English language
+                .language(Language.POLISH)         // in Polish language
                 .responseFormat(ResponseFormat.JSON)// with JSON response format
                 .unitFormat(UnitFormat.METRIC)      // in metric units
                 .build();
@@ -28,11 +28,17 @@ public class CurrentWeatherOneLocationExample {
 
     private static String prettyPrint(CurrentWeather currentWeather) {
         return String.format(
-                "Current weather in %s(%s):\ntemperature: %.1f ℃\nhumidity: %.1f %%\npressure: %.1f hPa\n",
+                "Current weather in %s(%s):\ntemperature: %.1f ℃\nhumidity: %.1f %%\npressure: %.1f hPa\n"+
+                "maximum temperature: %.1f\nminimum temperature: %.1f\nwind speed: %.1f  m/s\n",
+
                 currentWeather.getCityName(), currentWeather.getSystemParameters().getCountry(),
                 currentWeather.getMainParameters().getTemperature(),
                 currentWeather.getMainParameters().getHumidity(),
-                currentWeather.getMainParameters().getPressure()
+                currentWeather.getMainParameters().getPressure(),
+                currentWeather.getMainParameters().getMaximumTemperature(),
+                currentWeather.getMainParameters().getMinimumTemperature(),
+                currentWeather.getWind().getSpeed()
+
         );
     }
 }

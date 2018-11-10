@@ -10,15 +10,15 @@ import org.openweathermap.api.query.UnitFormat;
 import org.openweathermap.api.query.forecast.hourly.ByCityName;
 
 public class HourlyForecastExample {
-    private static final String API_KEY = "API_KEY_VALUE";
+    private static final String API_KEY = "590661e9a75d81f118714bd102422eae";
 
     public static void main(String[] args) {
         DataWeatherClient client = new UrlConnectionDataWeatherClient(API_KEY);
         ByCityName byCityNameForecast = QueryBuilderPicker.pick()
                 .forecast()                                         // get forecast
                 .hourly()                                           // it should be hourly forecast
-                .byCityName("Kharkiv")                              // for Kharkiv city
-                .countryCode("UA")                                  // in Ukraine
+                .byCityName("Frydrychowice")                              // for Kharkiv city
+                .countryCode("PL")                                  // in Ukraine
                 .unitFormat(UnitFormat.METRIC)                      // in Metric units
                 .language(Language.ENGLISH)                         // in English
                 .count(5)                                           // limit results to 5 forecasts

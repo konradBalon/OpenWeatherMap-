@@ -85,3 +85,4 @@ Take a look at [examples module](./api-examples)
 
 [codecov-shield]: https://codecov.io/gh/xSAVIKx/openweathermap-java-api/branch/master/graph/badge.svg
 [codecov-link]: https://codecov.io/gh/xSAVIKx/openweathermap-java-api
+# OpenWeatherMap-

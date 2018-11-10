@@ -10,7 +10,7 @@ import org.openweathermap.api.query.uvi.UviQuery;
 import org.openweathermap.api.query.uvi.current.ByGeographicCoordinates;
 
 public class UviCurrentExample {
-    private static final String API_KEY = "e727e62532fa3bedf05392e295969719";
+    private static final String API_KEY = "590661e9a75d81f118714bd102422eae\n";
 
     public static void main(String[] args) {
         DataWeatherClient client = new UrlConnectionDataWeatherClient(API_KEY);

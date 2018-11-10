@@ -12,7 +12,7 @@ import org.openweathermap.api.query.currentweather.InCycle;
 import java.util.List;
 
 public class CurrentWeatherMultipleLocationsExample {
-    private static final String API_KEY = "API_KEY_VALUE";
+    private static final String API_KEY = "590661e9a75d81f118714bd102422eae\n";
 
     public static void main(String[] args) {
         DataWeatherClient client = new UrlConnectionDataWeatherClient(API_KEY);
@@ -20,8 +20,8 @@ public class CurrentWeatherMultipleLocationsExample {
         InCycle inCycle = QueryBuilderPicker.pick()
                 .currentWeather()                                       // get current weather
                 .multipleLocations()                                    // for multiple locations
-                .inCycle(new Coordinate("36.230383", "49.9935"), 5)    // get weather for 10 closest to coordinate cities
-                .language(Language.ENGLISH)                             // in English language
+                .inCycle(new Coordinate("19.4939579", "49.8827856"), 8)    // get weather for 10 closest to coordinate cities
+                .language(Language.POLISH)                             // in English language
                 .unitFormat(UnitFormat.METRIC)                          // in metric units
                 .build();
         List<CurrentWeather> currentWeatherList = client.getCurrentWeather(inCycle);
